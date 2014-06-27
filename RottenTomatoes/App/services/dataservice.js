@@ -1,25 +1,27 @@
 ﻿define(['services/logger','durandal/system','services/model'],function (logger, system,model) {
 
-    var getOfficeBoxMoviesPartials = function (items) {
+    var getOfficeBoxMoviesPartials = function (itemsObservable) {
         //reset observable
-        //items([]);
+        itemsObservable([]);
         //set ajax call
         var options = {
             url: "/api/movies",
+            async:false,
             type: 'GET',
             dataType: 'json'
         };
         //make call
         $.ajax(options)
-            .then(querySucceded)
+            .done(querySucceded)
             .fail(queryFailed);
         //handle ajax callback
 
-        function querySucceded(data) {
-            items = data;     
-            $.when(items);           
-            log("These are the Box Office Movies", items, true);
-            return items;
+        function querySucceded(data) {        
+            
+            itemsObservable = ko.mapping.fromJS(data);
+            log("These are the Box Office Movies", data, true);
+            return itemsObservable;
+           
            
         }
     };

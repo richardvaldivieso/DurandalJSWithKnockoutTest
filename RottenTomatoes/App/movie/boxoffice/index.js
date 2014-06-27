@@ -1,5 +1,5 @@
 ﻿define(['durandal/system', 'durandal/app', './simpleGrid', 'knockout', 'services/dataservice'], function (system, app, SimpleGrid, ko, dataservice) {
-
+    var initialized = false;
     var initialData= [
     { MovieId: 1, Title: "Superman", Rating: "Roten", Sypnosis:"fea" },
      { MovieId: 1, Title: "Superman", Rating: "Roten", Sypnosis: "fea" },
@@ -10,7 +10,7 @@
      { MovieId: 1, Title: "Superman", Rating: "Roten", Sypnosis: "fea" }
     ];
 
-    var items= ko.observableArray(initialData);
+    var items= ko.observableArray();
 
     var gridViewModel = new SimpleGrid({
         data: items,
@@ -24,43 +24,42 @@
         pageSize: 4
     });
 
-    //var vm = {
-    //    gridViewModel: gridViewModel,
-    //    activate: activate,
-    //    refresh: refresh,
-    //    items:items
-
-    //};
-    //return vm;
-    //function activate() {
-    //    if (initialized) { return; }
-    //    initialized = true;
-    //    return refresh();
-    //}
-
-
-    return {
-        items: initialData,
-        addItem: function () {
-            items.push({ name: "New item", sales: 0, price: 100 });
-        },
-        sortByName: function () {
-            items.sort(function (a, b) {
-                return a.name < b.name ? -1 : 1;
-            });
-        },
-        jumpToFirstPage: function () {
-            gridViewModel.currentPageIndex(0);
-        },
-      
-        refresh:   function () {
-            items = ko.mapping.fromJS(dataservice.getOfficeBoxMoviesPartials(items));
-            return items;
-       },
-
+    var vm = {       
+        activate: activate,
+        refresh: refresh,
         gridViewModel: gridViewModel,
-        SimpleGrid: SimpleGrid
+        SimpleGrid: SimpleGrid,
+        items: items,
+        data: items,   
+        addItem: addItem,
+        sortByName: sortByName,
+        jumpToFirstPage:jumpToFirstPage
+        
     };
+    return vm;
+    function activate() {
+        if (initialized) { return; }
+        initialized = true;
+        return refresh();
+    }
 
+    function refresh () {
+        return dataservice.getOfficeBoxMoviesPartials(items);
+      
+    }
+
+     function addItem () {
+         //   items.push({ name: "New item", sales: 0, price: 100 });
+        }
+
+     function sortByName () {
+            items.sort(function (a, b) {
+                return a.title < b.title ? -1 : 1;
+            });
+     }
+      function jumpToFirstPage () {
+             gridViewModel.currentPageIndex(0);
+       }
+ 
  
 });
