@@ -1,6 +1,6 @@
 ﻿define(['durandal/system', 'durandal/app', './simpleGrid', 'knockout', 'services/dataservice'], function (system, app, SimpleGrid, ko, dataservice) {
 
-    var initialData = [
+    var initialData= [
     { MovieId: 1, Title: "Superman", Rating: "Roten", Sypnosis:"fea" },
      { MovieId: 1, Title: "Superman", Rating: "Roten", Sypnosis: "fea" },
     { MovieId: 1, Title: "Superman", Rating: "Roten", Sypnosis: "fea" },
@@ -10,7 +10,7 @@
      { MovieId: 1, Title: "Superman", Rating: "Roten", Sypnosis: "fea" }
     ];
 
-    var items = ko.observableArray(initialData);
+    var items= ko.observableArray(initialData);
 
     var gridViewModel = new SimpleGrid({
         data: items,
@@ -38,9 +38,6 @@
     //    return refresh();
     //}
 
-    //function refresh() {
-    //    return dataservice.getOfficeBoxMoviesPartials(items);
-    // }
 
     return {
         items: initialData,
@@ -56,6 +53,11 @@
             gridViewModel.currentPageIndex(0);
         },
       
+        refresh:   function () {
+            items = ko.mapping.fromJS(dataservice.getOfficeBoxMoviesPartials(items));
+            return items;
+       },
+
         gridViewModel: gridViewModel,
         SimpleGrid: SimpleGrid
     };

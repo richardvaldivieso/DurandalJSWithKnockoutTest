@@ -16,8 +16,10 @@
         //handle ajax callback
 
         function querySucceded(data) {
-             items = data;
+            items = data;     
+            $.when(items);           
             log("These are the Box Office Movies", items, true);
+            return items;
            
         }
     };
