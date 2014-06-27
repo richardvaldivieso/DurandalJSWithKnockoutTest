@@ -20,7 +20,6 @@
 /// <reference path="../app/movie/index.js" />
 /// <reference path="../app/search/index.js" />
 /// <reference path="../app/services/breeze.partial-entities.js" />
-/// <reference path="../app/services/datacontext.js" />
 /// <reference path="../app/services/dataservice.js" />
 /// <reference path="../app/services/logger.js" />
 /// <reference path="../app/services/model.js" />

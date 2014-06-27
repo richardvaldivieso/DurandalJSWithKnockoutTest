@@ -180,7 +180,6 @@
     <Content Include="App\movie\index.html" />
     <Content Include="App\movie\index.js" />
     <Content Include="App\services\breeze.partial-entities.js" />
-    <Content Include="App\services\datacontext.js" />
     <Content Include="App\services\dataservice.js" />
     <Content Include="App\services\logger.js" />
     <Content Include="App\services\model.js" />
