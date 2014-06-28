@@ -1,22 +1,19 @@
-﻿<div>
-    <h1 data-bind="text: gridViewModel.title"></h1>
-    <div class="well">
-        <div data-bind='compose: gridViewModel'></div>
-
-        <button class="btn btn-default" data-bind='click: addItem'>
-            Add Item
-        </button>
-
-        <button class="btn btn-default" data-bind='click: sortByName'>
-            Sort by Name
-        </button>
-
-        <button class="btn btn-default" data-bind='click: jumpToFirstPage, enable: gridViewModel.currentPageIndex'>
-            Jump to First Page
-        </button>
-
-        <button class="btn btn-info" data-bind='click: refresh'>
-            Refresh
-        </button>
-    </div>
-</div>
+﻿<h3>Office Movies</h3>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Movie Id</th>
+            <th>Title</th>
+            <th>Rating</th>
+            <th>Sypnosis</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: items">
+        <tr>
+            <td><span data-bind="text: MovieId"></span></td>
+            <td><span data-bind="text: Title"></span></td>
+            <td><span data-bind="text: Rating"></span></td>
+            <td><span data-bind="text: Sypnosis"></span></td>
+        </tr>
+    </tbody>
+</table>
