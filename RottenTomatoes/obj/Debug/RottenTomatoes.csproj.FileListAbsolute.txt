@@ -75,4 +75,3 @@ C:\Users\Richard\Documents\Visual Studio 2013\Projects\RottenTomatoes\DurandalJS
 C:\Users\Richard\Documents\Visual Studio 2013\Projects\RottenTomatoes\DurandalJSWithKnockoutTest\RottenTomatoes\bin\System.Web.WebPages.Razor.xml
 C:\Users\Richard\Documents\Visual Studio 2013\Projects\RottenTomatoes\DurandalJSWithKnockoutTest\RottenTomatoes\obj\Debug\RottenTomatoes.dll
 C:\Users\Richard\Documents\Visual Studio 2013\Projects\RottenTomatoes\DurandalJSWithKnockoutTest\RottenTomatoes\obj\Debug\RottenTomatoes.pdb
-C:\Users\Richard\Documents\Visual Studio 2013\Projects\RottenTomatoes\DurandalJSWithKnockoutTest\RottenTomatoes\obj\Debug\RottenTomatoes.csprojResolveAssemblyReference.cache

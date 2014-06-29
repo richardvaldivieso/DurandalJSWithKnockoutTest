@@ -160,7 +160,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\InTheatersController.cs" />
+    <Compile Include="Controllers\BoxOfficeController.cs" />
+    <Compile Include="Controllers\OpeningController.cs" />
+    <Compile Include="Controllers\UpcommingController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -174,6 +177,12 @@
     <Content Include="App\movie\boxoffice\index.js" />
     <Content Include="App\movie\boxoffice\simpleGrid.html" />
     <Content Include="App\movie\boxoffice\simpleGrid.js" />
+    <Content Include="App\movie\intheaters\index.html" />
+    <Content Include="App\movie\intheaters\index.js" />
+    <Content Include="App\movie\opening\index.html" />
+    <Content Include="App\movie\opening\index.js" />
+    <Content Include="App\movie\upcoming\index.html" />
+    <Content Include="App\movie\upcoming\index.js" />
     <Content Include="App\search\index.html" />
     <Content Include="App\search\index.js" />
     <Content Include="App\main.js" />
@@ -182,7 +191,6 @@
     <Content Include="App\services\breeze.partial-entities.js" />
     <Content Include="App\services\dataservice.js" />
     <Content Include="App\services\logger.js" />
-    <Content Include="App\services\model.js" />
     <Content Include="App\shell.html" />
     <Content Include="App\shell.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />

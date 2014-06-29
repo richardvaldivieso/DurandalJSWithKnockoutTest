@@ -6,10 +6,9 @@
     var getOfficeBoxMoviesPartials=function (itemsObservable) {
         //reset observable
         itemsObservable([]);
-        var self = this;
         //set ajax call
         var options = {
-            url: "/api/movies",
+            url: "/api/boxoffice",
             type: 'GET',
             dataType: 'json'
         };
@@ -20,17 +19,84 @@
         //handle ajax callback
 
         function querySucceded(data) {
-             // itemsObservable = ko.mapping.fromJS(data);
             ko.utils.arrayPushAll(itemsObservable, data);
-            // log("These are the Box Office Movies", itemsObservable, true);
             itemsObservable.valueHasMutated();
             log('Retrieve the movies', itemsObservable, true);
         }
 
     };
 
+    var getInTheatersPartials = function (itemsObservable) {
+
+        itemsObservable([]);
+        //set ajax call
+        var options = {
+            url: "/api/intheaters",
+            type: 'GET',
+            dataType: 'json'
+        };
+        //make call
+        return $.ajax(options)
+            .then(querySucceded)
+            .fail(queryFailed);
+        //handle ajax callback
+
+        function querySucceded(data) {
+            ko.utils.arrayPushAll(itemsObservable, data);
+            itemsObservable.valueHasMutated();
+            log('Retrieve the movies', itemsObservable, true);
+        }
+    };
+
+    var getOpeningPartials = function (itemsObservable) {
+
+        itemsObservable([]);
+        //set ajax call
+        var options = {
+            url: "/api/opening",
+            type: 'GET',
+            dataType: 'json'
+        };
+        //make call
+        return $.ajax(options)
+            .then(querySucceded)
+            .fail(queryFailed);
+        //handle ajax callback
+
+        function querySucceded(data) {
+            ko.utils.arrayPushAll(itemsObservable, data);
+            itemsObservable.valueHasMutated();
+            log('Retrieve the movies', itemsObservable, true);
+        }
+    };
+
+    var getUpcommingPartials = function (itemsObservable) {
+
+        itemsObservable([]);
+        //set ajax call
+        var options = {
+            url: "/api/upcomming",
+            type: 'GET',
+            dataType: 'json'
+        };
+        //make call
+        return $.ajax(options)
+            .then(querySucceded)
+            .fail(queryFailed);
+        //handle ajax callback
+
+        function querySucceded(data) {
+            ko.utils.arrayPushAll(itemsObservable, data);
+            itemsObservable.valueHasMutated();
+            log('Retrieve the movies', itemsObservable, true);
+        }
+    };
+
     var dataservice = {
-        getOfficeBoxMoviesPartials: getOfficeBoxMoviesPartials
+        getOfficeBoxMoviesPartials: getOfficeBoxMoviesPartials,
+        getInTheatersPartials: getInTheatersPartials,
+        getOpeningPartials: getOpeningPartials,
+        getUpcommingPartials: getUpcommingPartials
 
     };
 

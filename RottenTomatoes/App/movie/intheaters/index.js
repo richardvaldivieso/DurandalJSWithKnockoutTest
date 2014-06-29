@@ -5,7 +5,7 @@
         items: ko.observableArray(),
         activate: function () {
             var self = this;
-            return dataservice.getOfficeBoxMoviesPartials(self.items);
+            return dataservice.getInTheatersPartials(self.items);
         },
     };
 

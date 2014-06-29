@@ -15,7 +15,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'], function (sy
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'My SPA Example';
+    app.title = 'My SPA Project';
 
     app.configurePlugins({
         router: true,

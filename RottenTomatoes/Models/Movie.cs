@@ -7,7 +7,7 @@ namespace RottenTomatoes.Models
 {
     public class Movie
     {
-        public int MovieId { get; set; }
+        public long MovieId { get; set; }
         public string Title { get; set; }
         public string Rating { get; set; }
         public string Sypnosis { get; set; }
