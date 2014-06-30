@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RottenTomatoes.Models
+namespace RottenTomatoes.Data
 {
     public class Movie
     {
