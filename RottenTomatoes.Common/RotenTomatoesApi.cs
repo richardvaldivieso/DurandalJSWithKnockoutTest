@@ -24,9 +24,7 @@ namespace RottenTomatoes.Common
         
         public static List<rt.Movie> GetMovies(rt.MovieEnum movieEnum)
         {
-            //ecpvt66xymfzsthch4rnyzwu
             List<rt.Movie> queryResult;
-            //RtClient = new RottenTomatoesRestClient(ConfigurationManager.AppSettings["ApiKey"]);
             switch (movieEnum)
             {
                 case rt.MovieEnum.BoxOffice:
@@ -79,7 +77,17 @@ namespace RottenTomatoes.Common
         public static List<rt.Movie> GetMovies(string searchText)
         {
 
-            return null;
+            List<rt.Movie> queryResult;
+            queryResult = RtClient.MoviesSearch(searchText).Movies.Select(m => new rt.Movie
+            {
+                MovieId = (long)m.Id,
+                Title = m.Title,
+                Rating = m.Ratings.Critics_Rating,
+                Sypnosis = m.Synopsis
+
+            }).ToList();
+            
+            return queryResult;
         }
     }
 }

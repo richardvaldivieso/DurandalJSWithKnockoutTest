@@ -9,7 +9,7 @@ namespace RottenTomatoes.Controllers
     public class SearchMoviesController : ApiController
     {
         [HttpGet]
-        public List<rt.Movie> SearchMovies(string searchText)
+        public List<rt.Movie> SearchMovies(string searchText="")
         {
             //ecpvt66xymfzsthch4rnyzwu
             return RotenTomatoesApi.GetMovies(searchText);
