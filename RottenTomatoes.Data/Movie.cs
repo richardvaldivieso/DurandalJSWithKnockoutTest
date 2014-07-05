@@ -11,6 +11,7 @@ namespace RottenTomatoes.Data
         public string Title { get; set; }
         public string Rating { get; set; }
         public string Sypnosis { get; set; }
+        
 
     }
 }

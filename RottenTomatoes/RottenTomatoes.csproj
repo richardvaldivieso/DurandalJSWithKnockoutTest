@@ -157,6 +157,7 @@
     <Compile Include="Controllers\InTheatersController.cs" />
     <Compile Include="Controllers\BoxOfficeController.cs" />
     <Compile Include="Controllers\OpeningController.cs" />
+    <Compile Include="Controllers\SearchMoviesController.cs" />
     <Compile Include="Controllers\UpcommingController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

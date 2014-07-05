@@ -2,7 +2,15 @@
     var system = require('durandal/system');
     var logger = require('services/logger');
 
+    var getSearchMoviePartials = function (itemsObservable) {
+        itemsObservable([]);
+        var options = {
+            url: "/api/searchmovies",
+            type: 'GET',
+            dataType: 'json'
+        };
 
+    };
     var getOfficeBoxMoviesPartials=function (itemsObservable) {
         //reset observable
         itemsObservable([]);
@@ -96,7 +104,8 @@
         getOfficeBoxMoviesPartials: getOfficeBoxMoviesPartials,
         getInTheatersPartials: getInTheatersPartials,
         getOpeningPartials: getOpeningPartials,
-        getUpcommingPartials: getUpcommingPartials
+        getUpcommingPartials: getUpcommingPartials,
+        getSearchMoviePartials: getSearchMoviePartials
 
     };
 
