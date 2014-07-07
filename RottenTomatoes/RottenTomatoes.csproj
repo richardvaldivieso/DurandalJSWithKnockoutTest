@@ -158,7 +158,7 @@
     <Compile Include="Controllers\BoxOfficeController.cs" />
     <Compile Include="Controllers\OpeningController.cs" />
     <Compile Include="Controllers\SearchMoviesController.cs" />
-    <Compile Include="Controllers\UpcommingController.cs" />
+    <Compile Include="Controllers\UpcomingController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -169,8 +169,6 @@
     <Content Include="App\durandal\plugins\router.js" />
     <Content Include="App\movie\boxoffice\index.html" />
     <Content Include="App\movie\boxoffice\index.js" />
-    <Content Include="App\movie\boxoffice\simpleGrid.html" />
-    <Content Include="App\movie\boxoffice\simpleGrid.js" />
     <Content Include="App\movie\intheaters\index.html" />
     <Content Include="App\movie\intheaters\index.js" />
     <Content Include="App\movie\opening\index.html" />

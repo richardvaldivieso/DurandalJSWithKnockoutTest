@@ -12,6 +12,7 @@ namespace RottenTomatoes.Common
     {
         private static RottenTomatoesRestClient rtClient;
 
+        //using one instance of RottenTomatoesRestClient
         public static RottenTomatoesRestClient RtClient
         {
             get {
@@ -21,71 +22,97 @@ namespace RottenTomatoes.Common
                }
           
         }
-        
+        /// <summary>
+        ///  Get movies depending on movieEnum
+        /// </summary>
+        /// <param name="movieEnum">This parameter has the following values: Box Office, inTheaters, Opening, Upcoming </param>
+        /// <returns>Returns a movieresponse, but I mapped to a simple movie class.</returns>
         public static List<rt.Movie> GetMovies(rt.MovieEnum movieEnum)
         {
-            List<rt.Movie> queryResult;
-            switch (movieEnum)
+            //Todo: Check if the service is available.
+            List<rt.Movie> queryResult=null;
+            try
             {
-                case rt.MovieEnum.BoxOffice:
-                    queryResult = RtClient.BoxOfficeMovies().Movies.Select(m => new rt.Movie
-                    {
-                        MovieId = (long)m.Id,
-                        Title = m.Title,
-                        Rating = m.Ratings.Critics_Rating,
-                        Sypnosis = m.Synopsis
-                       
-                    }).ToList();
-                    break;
+                switch (movieEnum)
+                {
+                    case rt.MovieEnum.BoxOffice:
+                        queryResult = RtClient.BoxOfficeMovies().Movies.Select(m => new rt.Movie
+                        {
+                            MovieId = (long)m.Id,
+                            Title = m.Title,
+                            Rating = m.Ratings.Critics_Rating,
+                            Sypnosis = m.Synopsis
 
-                case rt.MovieEnum.InTheaters:
-                    queryResult = RtClient.InTheatersMovies().Movies.Select(m => new rt.Movie
-                    {
-                        MovieId = (long)m.Id,
-                        Title = m.Title,
-                        Rating = m.Ratings.Critics_Rating,
-                        Sypnosis = m.Synopsis
+                        }).ToList();
+                        break;
 
-                    }).ToList();
-                    break;
-                case rt.MovieEnum.Opening:
-                    queryResult = RtClient.OpeningMovies().Movies.Select(m => new rt.Movie
-                    {
-                        MovieId = (long)m.Id,
-                        Title = m.Title,
-                        Rating = m.Ratings.Critics_Rating,
-                        Sypnosis = m.Synopsis
+                    case rt.MovieEnum.InTheaters:
+                        queryResult = RtClient.InTheatersMovies().Movies.Select(m => new rt.Movie
+                        {
+                            MovieId = (long)m.Id,
+                            Title = m.Title,
+                            Rating = m.Ratings.Critics_Rating,
+                            Sypnosis = m.Synopsis
 
-                    }).ToList();
-                    break;
-                case rt.MovieEnum.Upcomming:
-                    queryResult = RtClient.UpcomingMovies().Movies.Select(m => new rt.Movie
-                   {
-                       MovieId = (long)m.Id,
-                       Title = m.Title,
-                       Rating = m.Ratings.Critics_Rating,
-                       Sypnosis = m.Synopsis
+                        }).ToList();
+                        break;
+                    case rt.MovieEnum.Opening:
+                        queryResult = RtClient.OpeningMovies().Movies.Select(m => new rt.Movie
+                        {
+                            MovieId = (long)m.Id,
+                            Title = m.Title,
+                            Rating = m.Ratings.Critics_Rating,
+                            Sypnosis = m.Synopsis
 
-                   }).ToList();
-                    break;
-                default:
-                    queryResult = null;
-                    break;
+                        }).ToList();
+                        break;
+                    case rt.MovieEnum.Upcoming:
+                        queryResult = RtClient.UpcomingMovies().Movies.Select(m => new rt.Movie
+                       {
+                           MovieId = (long)m.Id,
+                           Title = m.Title,
+                           Rating = m.Ratings.Critics_Rating,
+                           Sypnosis = m.Synopsis
+
+                       }).ToList();
+                        break;
+                    default:
+                        queryResult = null;
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
             }
             return queryResult;
         }
+        /// <summary>
+        ///  Get Movies. Return a list of movies depending on the searchtext.
+        /// </summary>
+        /// <param name="searchText"></param>
+        /// <returns></returns>
         public static List<rt.Movie> GetMovies(string searchText)
         {
 
-            List<rt.Movie> queryResult;
-            queryResult = RtClient.MoviesSearch(searchText).Movies.Select(m => new rt.Movie
+            List<rt.Movie> queryResult=null;
+            searchText = searchText ?? " ";
+            try
             {
-                MovieId = (long)m.Id,
-                Title = m.Title,
-                Rating = m.Ratings.Critics_Rating,
-                Sypnosis = m.Synopsis
+                queryResult = RtClient.MoviesSearch(searchText).Movies.Select(m => new rt.Movie
+                        {
+                            MovieId = (long)m.Id,
+                            Title = m.Title,
+                            Rating = m.Ratings.Critics_Rating,
+                            Sypnosis = m.Synopsis
 
-            }).ToList();
+                        }).ToList();
+            }
+            catch { 
+            
+            }
+        
             
             return queryResult;
         }

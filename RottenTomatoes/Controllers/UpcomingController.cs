@@ -6,12 +6,12 @@ using rt = RottenTomatoes.Data;
 using RottenTomatoes.Common;
 namespace RottenTomatoes.Controllers
 {
-    public class UpcommingController : ApiController
+    public class UpcomingController : ApiController
     {
         [HttpGet]
         public List<rt.Movie> Upcomming()
         {
-            return RotenTomatoesApi.GetMovies(rt.MovieEnum.Upcomming);
+            return RotenTomatoesApi.GetMovies(rt.MovieEnum.Upcoming);
         }
     }
 }

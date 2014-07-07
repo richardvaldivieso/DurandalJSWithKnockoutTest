@@ -11,6 +11,6 @@ namespace RottenTomatoes.Data
         BoxOffice,
         InTheaters,
         Opening,
-        Upcomming
+        Upcoming
     }
 }

@@ -2,13 +2,24 @@
     var system = require('durandal/system');
     var logger = require('services/logger');
 
-    var getSearchMoviePartials = function (itemsObservable) {
+    var getSearchMoviePartials = function (itemsObservable, searchText) {
         itemsObservable([]);
         var options = {
-            url: "/api/searchmovies",
+            url: "/api/searchmovies/",
             type: 'GET',
+            data: { searchText: searchText() },
             dataType: 'json'
         };
+
+        return $.ajax(options)
+         .then(querySucceded)
+         .fail(queryFailed);
+
+        function querySucceded(dataout) {
+            ko.utils.arrayPushAll(itemsObservable, dataout);
+            itemsObservable.valueHasMutated();
+            log('Movies found', itemsObservable, true);
+        }
 
     };
     var getOfficeBoxMoviesPartials=function (itemsObservable) {
@@ -83,7 +94,7 @@
         itemsObservable([]);
         //set ajax call
         var options = {
-            url: "/api/upcomming",
+            url: "/api/upcoming",
             type: 'GET',
             dataType: 'json'
         };
