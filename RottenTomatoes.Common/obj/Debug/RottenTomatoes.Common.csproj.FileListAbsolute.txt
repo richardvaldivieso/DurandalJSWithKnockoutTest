@@ -1,0 +1,11 @@
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\bin\Debug\RottenTomatoes.Common.dll.config
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\bin\Debug\RottenTomatoes.Common.dll
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\bin\Debug\RottenTomatoes.Common.pdb
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\bin\Debug\RestSharp.dll
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\bin\Debug\RottenTomatoes.Api.dll
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\bin\Debug\RottenTomatoes.Data.dll
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\bin\Debug\RottenTomatoes.Data.pdb
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\bin\Debug\RestSharp.xml
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\obj\Debug\RottenTomatoes.Common.csprojResolveAssemblyReference.cache
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\obj\Debug\RottenTomatoes.Common.dll
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Common\obj\Debug\RottenTomatoes.Common.pdb

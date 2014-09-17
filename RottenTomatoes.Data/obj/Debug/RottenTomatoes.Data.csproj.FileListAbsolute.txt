@@ -1,0 +1,5 @@
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Data\bin\Debug\RottenTomatoes.Data.dll
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Data\bin\Debug\RottenTomatoes.Data.pdb
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Data\obj\Debug\RottenTomatoes.Data.csprojResolveAssemblyReference.cache
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Data\obj\Debug\RottenTomatoes.Data.dll
+C:\Users\Richard\Documents\Visual Studio 2013\Projects\DurandalJSWithKnockoutTest\RottenTomatoes.Data\obj\Debug\RottenTomatoes.Data.pdb
